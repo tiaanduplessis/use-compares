@@ -22,7 +22,7 @@
 
 `useEffect`, `useLayoutEffect`, `useMemo` and `useCallback` hooks with the addition of a custom, deep or deterministic comparison of dependencies in contrast of reference equality.
 
-This is useful for you when you want to ensure a hook only runs under specific comparison conditions. [A good mental](https://kyleshevlin.com/mental-model-of-use-effect/) to have is to see it is a if conditional comparing the previous props with the current:
+This is useful for you when you want to ensure a hook only runs under specific comparison conditions. [A good mental](https://kyleshevlin.com/mental-model-of-use-effect/) to have is to see it as if you are conditionally comparing the previous props with the current:
 
 ```
 useEffect(() => {
