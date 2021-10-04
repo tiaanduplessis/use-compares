@@ -6,7 +6,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.module.js",
   "description": "Deep, custom and deterministic comparison for useEffect, useLayoutEffect, useMemo and useCallback React hooks.",
-  "version": "1.0.0",
+  "version": "0.0.0-dev",
   "scripts": {
     "build": "microbundle  --tsconfig tsconfig.json --jsxFragment React.Fragment --jsx React.createElement src/index.ts",
     "dev": "microbundle watch --tsconfig tsconfig.json --jsxFragment React.Fragment --jsx React.createElement src/index.ts",
