@@ -2,16 +2,26 @@
   "name": "use-compares",
   "type": "module",
   "source": "src/index.ts",
-  "exports": "./dist/index.modern.js",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.modern.js",
+    "require": "./dist/index.cjs"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.module.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "description": "Deep, custom and deterministic comparison for useEffect, useLayoutEffect, useMemo and useCallback React hooks.",
   "version": "0.0.0-dev",
   "scripts": {
+    "prepack": "npm run build",
     "build": "microbundle  --tsconfig tsconfig.json --jsxFragment React.Fragment --jsx React.createElement src/index.ts",
     "dev": "microbundle watch --tsconfig tsconfig.json --jsxFragment React.Fragment --jsx React.createElement src/index.ts",
     "lint": "eslint --fix src",
-    "test": "jest"
+    "test": "jest",
+    "test:package": "node scripts/test-package.cjs"
   },
   "sideEffects": false,
   "peerDependencies": {
