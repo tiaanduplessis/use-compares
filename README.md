@@ -70,7 +70,7 @@ The custom compare hooks except an additional third argument which compares the 
 
 ```js
 
-import { useCustomCompareEffect } from "use-compares/custom"
+import { useCustomCompareEffect } from "use-compares"
 import { dequal as isEqual } from "dequal/lite"
 
 const Component = () => {
@@ -93,6 +93,18 @@ The `deep` and `deterministic` compare varations can be seen as varations of the
 2. Commit your changes: `git commit -am "Add some feature"`.
 3. Push to the branch: `git push origin my-new-feature`.
 4. Submit a pull request.
+
+### Package validation
+
+Run `npm test` and `npm run test:package` before proposing a release. The package
+smoke test requires `tar` on your PATH. It builds and packs a clean temporary
+checkout, checks CommonJS and ES module imports from the extracted tarball, and
+compiles a TypeScript consumer using the project's TypeScript version and Node
+module resolution. It also checks that a failed build prevents packing. The test
+uses installed dependencies and does not publish or fetch packages.
+
+`npm pack` and `npm publish` run the build through `prepack`, and the package
+includes the generated `dist` files and TypeScript declarations.
 
 ## License
 
